@@ -40,7 +40,7 @@ body {
     gap: .1rem;
     width: 100vw;  
     height: 140vh; 
-    padding-bottom: 80px;
+    /*  padding-bottom: 80px; */ 
     
 }
 
@@ -167,6 +167,7 @@ main {
     font-weight: 200;
     border-radius: 10px;
     border-bottom: 2px solid aquamarine;
+    box-shadow: 2px 4px 8px aquamarine;
     
 }
 .main-card::after {
@@ -206,6 +207,11 @@ main {
     cursor: pointer;
 }
 
+.card-spacer-short {
+    display: inline-block;
+    width: .1vw;
+}
+
 #consoles-card, #games-card, #cards-card, #other-card {
     box-shadow: 2px 4px 8px aquamarine;
     margin-top: 8vh;
@@ -231,7 +237,7 @@ main {
     font-weight: 200;
     color: var(--color-text);
     border-radius: 10px;
-    box-shadow: 2px 4px 8px aquamarine;
+
     margin-top: 8vh;
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  var(--main-card-1) 0%, var(--main-card-2) 75% );
     padding: 0 1vw;
@@ -275,7 +281,6 @@ main {
     color: var(--color-text);
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-top: 8vh;
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  var(--main-card-1) 0%, var(--main-card-2) 75% );
 }
@@ -319,7 +324,6 @@ main {
     font-weight: 200;
     color: black;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: blue;
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  var(--main-card-1) 0%, var(--main-card-2) 75% );
 
@@ -376,29 +380,24 @@ main {
     color: var(--color-text);
     font-family: Handjet, sans-serif;
     font-weight: 200;
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     line-height: 1.3;
 }
 
-
-
-
-footer {
-    grid-column: 1 / span 20; /* Make footer span all columns in the grid */
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100vw; /* Ensure it spans the viewport width */
+#scrolling-text {
+    grid-column: 1 / span 20; 
     height: 6vh;
     font-size: 1.8rem;
     background-color: black;
     color: aquamarine;
-    z-index: 10; /* Optional: keep it above other content */
+    z-index: 10; /* keep it above other content */
     text-align: center;
     align-items: center;
     border-top: 2px solid seashell;
     margin-bottom: .4vh;
-    
+    border-bottom: 3px solid seashell;
+    font-family: 'Bitcount Prop Single', sans-serif;
+    font-weight: 200
 }
 
 .group {
@@ -418,10 +417,34 @@ footer {
     margin: 5px 0;
     padding: 0;
     width: max-content;
-    max-width: 100%;
     overflow: hidden;
-    animation: scrollText 120s infinite;
+    animation: scrollText 180s infinite;
 }
+
+.group .text #gemunu-text {
+    font-family: 'Gemunu Libre', sans-serif !important;
+}
+
+#gemunu-text {
+    font-family: 'Gemunu Libre', sans-serif;
+}
+
+.scroll-spacer-short {
+    display: inline-block;
+    width: 1.5rem;
+}
+
+.scroll-spacer-medium {
+    display: inline-block;
+    width: 2.5rem
+}
+
+.scroll-spacer-long {
+    display: inline-block;
+    width: 16rem;
+}
+
+
 
 .text:hover {
     color: white;
@@ -433,7 +456,8 @@ footer {
 }
 
 .footer-divider {
-    color: orangered
+    display: inlin-block;
+    width: 44rem;
 }
 
 #footer-blue {
@@ -466,6 +490,9 @@ footer {
         padding: 15px;
         font-size: 2.3rem;
     }
+    #other-card-content {
+        font-size: 2.3rem;
+    }
 }
 
 @media screen and (max-width: 1181px) {
@@ -475,90 +502,214 @@ footer {
     }
 }
 
-@media screen and (max-width: 950px) {
-    
-    #consoles-card-content {
+@media screen and (max-width: 1020px) {
+    #other-card-content {
         font-size: 2.1rem;
     }
 }
 
-@media screen and (max-width: 871px) {
-    #consoles-card-content {
-        font-size: 2rem;
-        
-    }
-}
-
 /* Make footer taller and text smaller on small screens */
-@media screen and (max-width: 800px) {
-    footer {
-        height: 9vh; /* or 10vh, adjust as needed */
-        font-size: 1.4rem;
-    }
+@media screen and (max-width: 810px) {
+    
     .group .text {
         font-size: 1.4rem;
     }
-    body {
-        max-height: 130vh;
-    }
+    
     ul li {
     padding: 0 1.2vw;
 }
     #logo {
         font-size: 1.8rem;
     }
-    #games-card-content {
-        font-size: 2rem;
+    #console-card-content {
+        font-size: 2.1rem;
     }
-    #other-card-content {
+    #games-card-content {
         font-size: 2rem;
     }
     .main-card-title-text {
         font-size: 2.5rem;    
     }
     #cards-card-content {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 761px) {
+    #games-card-content {
         font-size: 2rem;
     }
-}
-
-@media screen and (max-width: 751px) {
-    #games-card-content {
-        font-size: 1.8rem;
+    #consoles-card-content {
+        font-size: 2rem;
     }
     #cards-card-content {
-        font-size: 1.8rem;
+        font-size: 2.1rem;
+    }
+    #other-card-content {
+        font-size: 1.9rem;
     }
 }
+    
+@media screen and (max-width: 735px) {
+        #cards-card-content {
+            font-size: 2rem;
+        }
+}
 
-
-
+@media screen and (max-width: 697px) {
+    #cards-card-content {
+        font-size: 1.9rem;
+    }
+}
 
 @media screen and (max-width: 675px) {
     #games-card-content {
-        font-size: 1.7rem;
         margin-bottom: 1.5vh;
     }
     #consoles-card-content {
         margin-bottom: 1.5vh;
+    }
+    #others-card-content {
+        font-size: 1.8rem;
     }
 }
 
 @media screen and (max-width: 641px) {
     #consoles-card-content {
-        font-size: 1.9rem;
         margin-bottom: 1.5vh;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 636px) {
+    #games-card-content {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 605px) {
     #consoles-card-content {
         font-size: 1.8rem;
     }
     #cards-card-content {
         font-size: 1.7rem;
     }
+    #games-card-content {
+        font-size: 1.9rem;
+    }
     #other-card-content {
         font-size: 1.7rem;
+    }
+    .main-card-title-text {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 581px) {
+   #games-card-content {
+    font-size: 1.7rem;
+   }
+    #logo {
+        font-size: 1.8rem;
+    }
+     #games, #consoles, #cards, #other {
+        font-size: 2.1rem;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    #consoles-card-title-text {
+        font-size: 2.2rem;
+        
+    }
+}
+
+@media screen and (max-width: 556px) {
+    #consoles-card-content {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 541px) {
+    #logo {
+        font-size: 1.7rem
+    }
+   
+}
+
+@media screen and (max-width: 517px) {
+    #logo {
+        font-size: 1.6rem;
+    }
+    #games-card-content {
+        font-size: 1.6rem;
+    }   
+}
+
+@media screen and (max-width: 495px) {
+    #logo {
+        font-size: 1.5rem;
+    }
+    #games, #cards, #other {
+        font-size: 1.9rem;
+    }  
+    #consoles-card-title {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+@media screen and (max-width: 465px) {
+    #logo {
+        font-size: 1.4rem;
+    }
+      #games, #consoles, #cards, #other {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 451px) {
+    .nav-link {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 447px) {
+    #logo {
+        font-size: 1.2rem;
+    }
+    #games, #consoles, #cards, #other {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 431px) {
+    #logo {
+        font-size: 1.2rem;
+    }
+    #cards-card-content {
+        font-size: 1.6rem;
+    }
+    #other-card-content {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 417px) {
+    #logo {
+        font-size: 1.1rem;
+    }
+    #games, #consoles, #cards, #other {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 405px) {
+    #games-card-content {
+        font-size: 1.5rem;
+    }
+    #other-card-content {
+        font-size: 1.5rem;
     }
 }
 
@@ -582,4 +733,6 @@ footer {
         /* transform: translateX(-100%); */
     }
 }
+
+
 
